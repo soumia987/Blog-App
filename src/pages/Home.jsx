@@ -5,7 +5,7 @@ import PostCard from "../components/PostCard";
 const Home = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // إضافة حالة الخطأ
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -14,7 +14,7 @@ const Home = () => {
         setPosts(response.data);
       } catch (error) {
         console.error("Erreur lors du chargement des articles :", error);
-        setError("Une erreur est survenue lors du chargement des articles."); // تعيين رسالة الخطأ
+        setError("Une erreur est survenue lors du chargement des articles."); 
       } finally {
         setLoading(false);
       }
@@ -31,7 +31,7 @@ const Home = () => {
         <div className="flex justify-center items-center">
           <div className="w-16 h-16 border-t-4 border-white border-solid rounded-full animate-spin"></div>
         </div>
-      ) : error ? (  // إذا كانت هناك مشكلة في التحميل، عرض رسالة الخطأ
+      ) : error ? ( 
         <p className="text-center text-xl text-red-500">{error}</p>
       ) : posts.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
